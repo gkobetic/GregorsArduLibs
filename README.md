@@ -1,6 +1,7 @@
 # GregorsArduLibs
 
-### Llibrary for delays (time intervals) that do not stop the main loop from executing.
+### No delay
+Llibrary for delays (time intervals) that do not stop the main loop from executing.
 
 ### Create delay:
 MyDelay myDelay1(1000); -> 1000 is interval time in milliseconds when your code can be executed
