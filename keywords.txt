@@ -1,0 +1,2 @@
+MyDelay	KEYWORD1
+execute	KEYWORD2
