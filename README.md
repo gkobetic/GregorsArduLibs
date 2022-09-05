@@ -14,9 +14,9 @@ Add as many delays as you want. Name them like myDelay2(), myDelay3(), myDelay4(
 - resume(); -> resumes executing delay
 - setInterval(200); -> change interval time on existing delay. 200 is new interval time
 
-Please see code example in Arduino IDE
+Please see code example in Arduino IDE.
 
-You can contact me any time
+You can contact me any time:
 - gkobetic@gmail.com
 - https://www.notics.si/
 
