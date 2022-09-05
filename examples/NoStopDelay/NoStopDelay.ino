@@ -1,6 +1,6 @@
 /*
   Gregor's library for "no stop" delay.
-  Created by Gregor, september 2022.
+  September 2022.
 */
 
 #include <MyDelay.h>
