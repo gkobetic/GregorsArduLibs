@@ -9,21 +9,20 @@
 
 #include "Arduino.h"
 
-//Definicija class-a
+//Class definition
 class MyDelay
 {
  	public:
-	//Konstruktor
+	//Constructor
 	MyDelay(unsigned long milliseconds);
-	//Public variable in metode
+	//Public methods and variables
 	bool isInterval();
 	void start();
 	void stop();
 	void resume();
-	//....
-
+	
 	private:
-	//Private variable in metode
+	//Private methods and variables
 	unsigned long preMills, curMills, delaytime;
 	bool canExecute;
 };

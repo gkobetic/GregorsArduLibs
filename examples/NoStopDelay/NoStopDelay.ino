@@ -5,19 +5,37 @@
 
 #include <MyDelay.h>
 
-//Kreiram objekt in dolocim interval v ms
-MyDelay Zakasnitev1(1000);
+//Create delay object and set interval in milliseconds
+MyDelay myDelay1(1000);
+MyDelay myDelay2(500);
 
 void setup() {
-  Zakasnitev1.start();
-  
+  //Start method must be called for delay to start executing
+  myDelay1.start();
+  myDelay2.start();
+
+  //Stop method can be called to stop executing the delay
+  //myDelay1.stop();
+  //myDelay2.stop();
+
+  //Resume metod resumes executing the delay and takes into account the remaining time. If .start() method is called instead of .resume() then remainig time is reset.
+  //myDelay1.resume();
+  //myDelay2.resume();
+
 }
 
 void loop() {
 
-  if(Zakasnitev1.isInterval())
+  //When the interval expires then execute my code
+  if(myDelay1.isInterval())
   {
-    //Tukaj se izvaja moja koda ob definiranem intervalu
+    //Here is my code to be executed
+  }
+
+  //Another delay
+  if(myDelay2.isInterval())
+  {
+    //Here is my code to be executed
   }
 
 }

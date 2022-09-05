@@ -7,18 +7,18 @@
 #include "arduino.h"
 #include "MyDelay.h"
 
-//Konstruktor
+//Constructor
 MyDelay::MyDelay(unsigned long milliseconds) {
-	delaytime = milliseconds; //Podam input parameter v private v variablo
+	delaytime = milliseconds; //Set input parameter in private variable
 	preMills = 0;
-	canExecute = false; //Po defaultu je zadevscina ugasnjena
+	canExecute = false; //Parameter for executing the time interval
 }
 
-//Glavna logika
+//Main logic
 bool MyDelay::isInterval() {
-	if (!canExecute) return false; //ce je ugasnjen ne izvajam kode
+	if (!canExecute) return false; //If this parameter is false than we don't execute the code
 
-	//Takole se izracuna interval
+	//Calcualte when time interval expires
 	curMills = millis();
 	if (curMills - preMills >= delaytime) {
 		preMills = curMills;
@@ -29,18 +29,18 @@ bool MyDelay::isInterval() {
 	}		
 }
 
-//Metoda za start, ki poresetira variablo preMills. Posledicno se takoj sprozi interval
+//Method to start calculating intervals. This method resets preMills
 void MyDelay::start() {
 	canExecute = true;
 	preMills = 0;
 }
 
-//Metoda za stop
+//Method for stop calculating interval
 void MyDelay::stop() {
 	canExecute = false;
 }
 
-//Metoda resume dela kot start, le da ne poresetira preMills
+//Method resumes calcualtion of interval and doesn't reset preMills variable as start method does
 void MyDelay::resume() {
 	canExecute = true;
 }
