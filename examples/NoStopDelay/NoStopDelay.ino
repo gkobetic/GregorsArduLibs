@@ -38,4 +38,7 @@ void loop() {
     //Here is my code to be executed
   }
 
+  //Example how to change interval time on existing delay
+  //myDelay1.setInterval(200);
+
 }

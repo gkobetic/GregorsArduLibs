@@ -44,3 +44,8 @@ void MyDelay::stop() {
 void MyDelay::resume() {
 	canExecute = true;
 }
+
+//Method for change the interval time
+void MyDelay::setInterval(unsigned long milliseconds) {
+	delaytime = milliseconds;
+}
