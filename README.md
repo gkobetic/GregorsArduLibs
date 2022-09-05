@@ -1,6 +1,6 @@
-# GregorsArduLibs
+# Gregor's Arduino Libraries
 
-### No delay
+### Non stopable delay
 Llibrary for delays (time intervals) that do not stop the main loop from executing.
 
 ### Create delay:
