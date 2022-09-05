@@ -9,12 +9,13 @@
 MyDelay Zakasnitev1(1000);
 
 void setup() {
-  //Setup koda...
+  Zakasnitev1.start();
+  
 }
 
 void loop() {
 
-  if(Zakasnitev1.execute())
+  if(Zakasnitev1.isInterval())
   {
     //Tukaj se izvaja moja koda ob definiranem intervalu
   }

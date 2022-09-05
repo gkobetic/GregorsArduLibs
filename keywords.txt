@@ -1,2 +1,5 @@
-MyDelay	KEYWORD1
-execute	KEYWORD2
+MyDelay KEYWORD1
+isInterval  KEYWORD2
+start   KEYWORD2
+stop    KEYWORD2
+resume  KEYWORD2

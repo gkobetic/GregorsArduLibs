@@ -16,12 +16,16 @@ class MyDelay
 	//Konstruktor
 	MyDelay(unsigned long milliseconds);
 	//Public variable in metode
-	bool execute();
+	bool isInterval();
+	void start();
+	void stop();
+	void resume();
 	//....
 
 	private:
 	//Private variable in metode
 	unsigned long preMills, curMills, delaytime;
+	bool canExecute;
 };
 
 #endif
