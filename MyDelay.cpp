@@ -10,7 +10,7 @@
 //Constructor
 MyDelay::MyDelay(unsigned long milliseconds) {
 	delaytime = milliseconds; //Set input parameter in private variable
-	preMills = 0;
+	preMills = millis();
 	canExecute = false; //Parameter for executing the time interval
 }
 
@@ -32,7 +32,7 @@ bool MyDelay::isInterval() {
 //Method to start calculating intervals. This method resets preMills
 void MyDelay::start() {
 	canExecute = true;
-	preMills = 0;
+	preMills = millis();
 }
 
 //Method for stop calculating interval
