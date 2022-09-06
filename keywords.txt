@@ -1,7 +1,7 @@
-MyDelay KEYWORD1
-isInterval  KEYWORD2
-start   KEYWORD2
-stop    KEYWORD2
-resume  KEYWORD2
-reset   KEYWORD2
-setInterval KEYWORD2
+MyDelay	KEYWORD1
+isInterval	KEYWORD2
+start	KEYWORD2
+stop	KEYWORD2
+resume	KEYWORD2
+reset	KEYWORD2
+setInterval	KEYWORD2
