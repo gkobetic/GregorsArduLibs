@@ -13,7 +13,7 @@ Add as many delays as you want. Name them like myDelay2(), myDelay3(), myDelay4(
 - stop(); -> stop executing delay
 - resume(); -> resumes executing delay
 - reset(); -> resets timer and start counting interval time from the beginning
-- setInterval(200); -> change interval time on existing delay. 200 is new interval time
+- setInterval(200); -> change interval time on existing delay. 200 is new interval time in milliseconds 
 
 Please see code example in Arduino IDE.
 
