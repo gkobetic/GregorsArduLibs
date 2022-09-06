@@ -18,7 +18,7 @@ void setup() {
   //myDelay1.stop();
   //myDelay2.stop();
 
-  //Resume metod resumes executing the delay and takes into account the remaining time. If .start() method is called instead of .resume() then remainig time is reset.
+  //Resume metod resumes executing the delay and takes into account the remaining time
   //myDelay1.resume();
   //myDelay2.resume();
 
@@ -40,5 +40,8 @@ void loop() {
 
   //Example how to change interval time on existing delay
   //myDelay1.setInterval(200);
+
+  //Resets timer. It is usually used when we want to reset (extend) the expiration time due to some event
+  //myDelay1.reset();
 
 }

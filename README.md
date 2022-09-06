@@ -1,4 +1,4 @@
-# Gregor's Arduino Libraries
+#" Gregor's Arduino Libraries
 
 ### 1. Non stopable delay
 Library for delays (time intervals) that do not stop the main loop from executing.
@@ -12,6 +12,7 @@ Add as many delays as you want. Name them like myDelay2(), myDelay3(), myDelay4(
 - start(); -> starts executing delay
 - stop(); -> stop executing delay
 - resume(); -> resumes executing delay
+- reset(); -> resets timer and start counting interval time from the beginning
 - setInterval(200); -> change interval time on existing delay. 200 is new interval time
 
 Please see code example in Arduino IDE.

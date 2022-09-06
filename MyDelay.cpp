@@ -45,6 +45,11 @@ void MyDelay::resume() {
 	canExecute = true;
 }
 
+//Method resets preMills variable
+void MyDelay::reset() {
+	preMills = millis();
+}
+
 //Method for change the interval time
 void MyDelay::setInterval(unsigned long milliseconds) {
 	delaytime = milliseconds;

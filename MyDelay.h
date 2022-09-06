@@ -20,6 +20,7 @@ class MyDelay
 	void start();
 	void stop();
 	void resume();
+	void reset();
 	void setInterval(unsigned long milliseconds);
 	
 	private:
