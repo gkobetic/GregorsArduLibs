@@ -20,6 +20,7 @@ bool MyDelay::isInterval() {
 
 	//Calcualte when time interval expires
 	curMills = millis();
+	if (preMills > curMills) preMills = 0; //Safety if millis() overflows
 	if (curMills - preMills >= delaytime) {
 		preMills = curMills;
         return true;
