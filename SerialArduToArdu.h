@@ -21,11 +21,15 @@ class SerialArduToArdu
 	void sendStatus(String a, int b);
 	void sendInteger(String a, int b);
 	void sendDecimal(String a, double b);
+	void readSerial();
+	String getKey();
+	String getValue(bool nullCharacter = true);
 	
 	private:
 	// Private methods and variables
-	int mySerialPortSend, mySpeed;
-	bool isSerialOutput;
+	int _serialPortSend, _speed;
+	bool _serialOutput;
+	String _key, _value;
 	void sendSerial(String x, String y);
 	void checkStringSize(String myKey, String myValue = "");
 	

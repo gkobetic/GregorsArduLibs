@@ -14,3 +14,6 @@ sendString	KEYWORD2
 sendStatus	KEYWORD2
 sendInteger	KEYWORD2
 sendDecimal	KEYWORD2
+readSerial	KEYWORD2
+getKey	KEYWORD2
+getValue	KEYWORD2

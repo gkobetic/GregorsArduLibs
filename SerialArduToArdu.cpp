@@ -9,24 +9,24 @@
 
 //Constructor
 SerialArduToArdu::SerialArduToArdu(int serialPortSend, int speed, bool serialOutput) {
-	mySerialPortSend = serialPortSend; // Serial port number for sending data.
-  mySpeed = speed; // Sets the data rate in bits per second (baud) for serial data transmission
-  isSerialOutput = serialOutput;
+	_serialPortSend = serialPortSend; // Serial port number for sending data.
+  _speed = speed; // Sets the data rate in bits per second (baud) for serial data transmission
+  _serialOutput = serialOutput;
 }
 
 // Setup method
 void SerialArduToArdu::begin() {
-  if (mySerialPortSend == 0) {
-  	Serial.begin(mySpeed);
+  if (_serialPortSend == 0) {
+  	Serial.begin(_speed);
   }
-  else if (mySerialPortSend == 1) {
-	Serial1.begin(mySpeed);
+  else if (_serialPortSend == 1) {
+	  Serial1.begin(_speed);
   }
-  else if (mySerialPortSend == 2) {
-	Serial2.begin(mySpeed);
+  else if (_serialPortSend == 2) {
+	  //Serial2.begin(_speed);
   }
-  else if (mySerialPortSend == 3) {
-	Serial3.begin(mySpeed);
+  else if (_serialPortSend == 3) {
+	  //Serial3.begin(_speed);
   }
 }
 
@@ -50,20 +50,20 @@ void SerialArduToArdu::begin() {
 void SerialArduToArdu::sendSerial(String x, String y) {
   x = x + ":"; 
 
-  if (mySerialPortSend == 0) {
+  if (_serialPortSend == 0) {
   	Serial.println(x + y);
   }
-  else if (mySerialPortSend == 1) {
-	Serial1.println(x + y);
+  else if (_serialPortSend == 1) {
+	  Serial1.println(x + y);
   }
-  else if (mySerialPortSend == 2) {
-	Serial2.println(x + y);	
+  else if (_serialPortSend == 2) {
+	  //Serial2.println(x + y);	
   }
-  else if (mySerialPortSend == 3) {
-	Serial3.println(x + y);
+  else if (_serialPortSend == 3) {
+	  //Serial3.println(x + y);
   }
 
-  if (isSerialOutput) Serial.println(x + y);
+  if (_serialOutput) Serial.println(x + y);
 }
 
 //Method for sending String
@@ -90,10 +90,34 @@ void SerialArduToArdu::sendDecimal(String a, double b) {
   checkStringSize(a);
 }
 
-//Method to check KEY and VALUE size
-void SerialArduToArdu::checkStringSize(String myKey, String myValue = "") {
-  if (isSerialOutput) {
+//Method to check KEY and VALUE size for sending data
+void SerialArduToArdu::checkStringSize(String myKey, String myValue) {
+  if (_serialOutput) {
     if (myKey.length() != 6) Serial.println("Key text: " + myKey + ", wrong size. Must be 6 characters!");
     if (myValue.length() > 30) Serial.println("Value text: " + myValue + ", be carefull with String size. Serial buffer is 64 bytes and overflow can occur!");
   }
+}
+
+//Method for reading serial port
+void SerialArduToArdu::readSerial() {
+  String myString = "";
+
+  //Reading serial until I get new line character
+  if(Serial.available() > 0) myString = Serial.readStringUntil('\n'); 
+
+  //Parse data
+  _key = myString.substring(0, 6);
+  _value = myString.substring(7, myString.length()); 
+}
+String SerialArduToArdu::getKey() {
+    return _key;
+}
+String SerialArduToArdu::getValue(bool nullCharacter) {
+  if (nullCharacter) {
+    return _value;
+  }
+  else {
+    return _value.substring(0, _value.length() -1);
+  }
+
 }
