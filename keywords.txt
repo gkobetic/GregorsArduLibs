@@ -1,3 +1,4 @@
+# MyDelay library
 MyDelay	KEYWORD1
 isInterval	KEYWORD2
 start	KEYWORD2
@@ -6,9 +7,10 @@ resume	KEYWORD2
 reset	KEYWORD2
 setInterval	KEYWORD2
 
-
-SerialArduToArdu    KEYWORD1
-sendString  KEYWORD2
-sendStatus  KEYWORD2
-sendInteger KEYWORD2
-sendDecimal KEYWORD2
+# SerialArduToArdu library
+SerialArduToArdu	KEYWORD1
+setup	KEYWORD2
+sendString	KEYWORD2
+sendStatus	KEYWORD2
+sendInteger	KEYWORD2
+sendDecimal	KEYWORD2

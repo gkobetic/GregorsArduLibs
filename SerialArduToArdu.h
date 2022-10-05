@@ -14,9 +14,9 @@ class SerialArduToArdu
 {
  	public:
 	// Constructor
-	SerialArduToArdu(int serialNumberSend);
+	SerialArduToArdu(int serialNumberSend, int speed, bool serialOutput);
 	// Public methods and variables
-	void sendSerial(String x, String y);
+	void begin();
 	void sendString(String a, String b);
 	void sendStatus(String a, int b);
 	void sendInteger(String a, int b);
@@ -24,7 +24,10 @@ class SerialArduToArdu
 	
 	private:
 	// Private methods and variables
-	int serialPortSend;
+	int mySerialPortSend, mySpeed;
+	bool isSerialOutput;
+	void sendSerial(String x, String y);
+	void checkStringSize(String myKey, String myValue = "");
 	
 
 };
