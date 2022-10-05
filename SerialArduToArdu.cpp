@@ -48,20 +48,20 @@ void SerialArduToArdu::sendSerial(String x, String y) {
 
 //Method for sending String
 void SerialArduToArdu::sendString(String a, String b) {
-  sendSerial(a, b);   
+  //sendSerial(a, b);   
 }
 //Method for sending Status
 void SerialArduToArdu::sendStatus(String a, int b) {
   if (b != 1) {
     b = 0;
   }
-  sendSerial(a, String(b));  
+  //sendSerial(a, String(b));  
 }
 //Method for sending Integer
 void SerialArduToArdu::sendInteger(String a, int b) {
-  sendSerial(a, String(b));   
+  //sendSerial(a, String(b));   
 }
 //Method for sending Decimal
 void SerialArduToArdu::sendDecimal(String a, double b) {
-  sendSerial(a, String(b));   
+  //sendSerial(a, String(b));   
 }

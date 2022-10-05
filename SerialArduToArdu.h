@@ -16,16 +16,17 @@ class SerialArduToArdu
 	// Constructor
 	SerialArduToArdu(int serialNumberSend);
 	// Public methods and variables
-	sendString();
-	sendStatus();
-	sendInteger();
-	sendDecimal();
+	void sendSerial(String x, String y);
+	void sendString(String a, String b);
+	void sendStatus(String a, int b);
+	void sendInteger(String a, int b);
+	void sendDecimal(String a, double b);
 	
 	private:
 	// Private methods and variables
-	int serialNumberSend;
-	sendSerial();
+	int serialPortSend;
 	
+
 };
 
 #endif
