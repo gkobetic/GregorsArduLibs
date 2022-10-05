@@ -9,33 +9,23 @@
 
 #include "Arduino.h"
 
-//Class definition
+// Class definition
 class SerialArduToArdu
 {
  	public:
-	//Constructor
+	// Constructor
 	SerialArduToArdu(int serialNumberSend);
-	//Public methods and variables
-	sendSerial();
+	// Public methods and variables
 	sendString();
 	sendStatus();
 	sendInteger();
 	sendDecimal();
-
-	// bool isInterval();
-	// void start();
-	// void stop();
-	// void resume();
-	// void reset();
-	// void setInterval(unsigned long milliseconds);
-	
 	
 	private:
-	//Private methods and variables
+	// Private methods and variables
 	int serialNumberSend;
-
-	// unsigned long preMills, curMills, delaytime;
-	// bool canExecute;
+	sendSerial();
+	
 };
 
 #endif
