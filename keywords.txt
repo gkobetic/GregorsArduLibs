@@ -5,3 +5,10 @@ stop	KEYWORD2
 resume	KEYWORD2
 reset	KEYWORD2
 setInterval	KEYWORD2
+
+
+SerialArduToArdu    KEYWORD1
+sendString  KEYWORD2
+sendStatus  KEYWORD2
+sendInteger KEYWORD2
+sendDecimal KEYWORD2
