@@ -1,57 +1,67 @@
 /*
   SOURCE FILE
-  Gregor's library for "no stop" delay.
-  September 2022.
+  Gregor's library for Arduino to Arduino serial communication.
+  October 2022.
 */
 
 #include "arduino.h"
-#include "MyDelay.h"
+#include "SerialArduToArdu.h"
 
 //Constructor
-MyDelay::MyDelay(unsigned long milliseconds) {
-	delaytime = milliseconds; //Set input parameter in private variable
-	preMills = millis();
-	canExecute = false; //Parameter for executing the time interval
+SerialArduToArdu::SerialArduToArdu(int serialPortSend) {
+	serialPortSend = serialPortSend; //Serial number for sending data, example: Serial1
 }
 
-//Main logic
-bool MyDelay::isInterval() {
-	if (!canExecute) return false; //If this parameter is false than we don't execute the code
+//Main loop method
+// bool MyDelay::isInterval() {
+// 	if (!canExecute) return false; //If this parameter is false than we don't execute the code
 
-	//Calcualte when time interval expires
-	curMills = millis();
-	if (preMills > curMills) preMills = 0; //Safety if millis() overflows
-	if (curMills - preMills >= delaytime) {
-		preMills = curMills;
-        return true;
-	}
-	else {
-        return false;
-	}		
+// 	//Calcualte when time interval expires
+// 	curMills = millis();
+// 	if (preMills > curMills) preMills = 0; //Safety if millis() overflows
+// 	if (curMills - preMills >= delaytime) {
+// 		preMills = curMills;
+//         return true;
+// 	}
+// 	else {
+//         return false;
+// 	}		
+// }
+
+//Common method for sending data
+void SerialArduToArdu::sendSerial(String x, String y) {
+  x = x + ":"; 
+
+  if (serialPortSend == 1) {
+  	Serial1.println(x + y);
+  }
+  else if (serialPortSend == 2) {
+	Serial2.println(x + y);
+  }
+  else if (serialPortSend == 3) {
+	Serial3.println(x + y);	
+  }
+  else if (serialPortSend == 4) {
+	Serial4.println(x + y);
+  }
 }
 
-//Method to start calculating intervals. This method resets preMills
-void MyDelay::start() {
-	canExecute = true;
-	preMills = millis();
+//Method for sending String
+void SerialArduToArdu::sendString(String a, String b) {
+  sendSerial(a, b);   
 }
-
-//Method for stop calculating interval
-void MyDelay::stop() {
-	canExecute = false;
+//Method for sending Status
+void SerialArduToArdu::sendStatus(String a, int b) {
+  if (b != 1) {
+    b = 0;
+  }
+  sendSerial(a, String(b));  
 }
-
-//Method resumes calcualtion of interval and doesn't reset preMills variable as start method does
-void MyDelay::resume() {
-	canExecute = true;
+//Method for sending Integer
+void SerialArduToArdu::sendInteger(String a, int b) {
+  sendSerial(a, String(b));   
 }
-
-//Method resets preMills variable
-void MyDelay::reset() {
-	preMills = millis();
-}
-
-//Method for change the interval time
-void MyDelay::setInterval(unsigned long milliseconds) {
-	delaytime = milliseconds;
+//Method for sending Decimal
+void SerialArduToArdu::sendDecimal(String a, double b) {
+  sendSerial(a, String(b));   
 }

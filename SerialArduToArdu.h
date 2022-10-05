@@ -1,32 +1,41 @@
 /*
   HEADER FILE
-  Gregor's library for "no stop" delay.
-  September 2022.
+  Gregor's library for Arduino to Arduino serial communication.
+  October 2022.
 */
 
-#ifndef MyDelay_h
-#define MyDelay_h
+#ifndef SerialArduToArdu_h
+#define SerialArduToArdu_h
 
 #include "Arduino.h"
 
 //Class definition
-class MyDelay
+class SerialArduToArdu
 {
  	public:
 	//Constructor
-	MyDelay(unsigned long milliseconds);
+	SerialArduToArdu(int serialNumberSend);
 	//Public methods and variables
-	bool isInterval();
-	void start();
-	void stop();
-	void resume();
-	void reset();
-	void setInterval(unsigned long milliseconds);
+	sendSerial();
+	sendString();
+	sendStatus();
+	sendInteger();
+	sendDecimal();
+
+	// bool isInterval();
+	// void start();
+	// void stop();
+	// void resume();
+	// void reset();
+	// void setInterval(unsigned long milliseconds);
+	
 	
 	private:
 	//Private methods and variables
-	unsigned long preMills, curMills, delaytime;
-	bool canExecute;
+	int serialNumberSend;
+
+	// unsigned long preMills, curMills, delaytime;
+	// bool canExecute;
 };
 
 #endif
