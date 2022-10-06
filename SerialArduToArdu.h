@@ -14,7 +14,7 @@ class SerialArduToArdu
 {
  	public:
 	// Constructor
-	SerialArduToArdu(int serialPortSend, int speedSend, int serialPortReceive, int speedReceive, bool serialOutput);
+	SerialArduToArdu(int serialPortSend, int speedSend, int serialPortReceive, int speedReceive, bool serialOutput = false);
 	// Public methods and variables
 	void begin();
 	void sendString(String a, String b);
@@ -23,7 +23,7 @@ class SerialArduToArdu
 	void sendDecimal(String a, double b);
 	void readSerial();
 	String getKey();
-	String getValue(bool nullCharacter = true);
+	String getValue(bool endCharacter = true);
 	
 	private:
 	// Private methods and variables
