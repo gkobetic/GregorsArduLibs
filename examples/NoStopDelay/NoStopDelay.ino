@@ -1,5 +1,6 @@
 /*
   Gregor's library for "no stop" delay.
+  This is example sketch of implementation of non stopable delay function.
   September 2022.
 */
 
