@@ -30,38 +30,42 @@ void setup() {
 
 void loop() {
 
-  // Send KEY-VALUE pairs. KEY text must have 6 characters, not more, not less. VALUE text is limited to serial buffer size (64 bytes)
-  // After each method there is a delay() so that the Arduino on the receiving side can process the data and the buffer does not fill up
+  //Method for reading serial port. Must be called in loop()
+  sata1.readSerial();
+
+  // Get KEY-VALUE pairs that are received over Serial port
+  // String
   if (sata1.getKey() == "text01") {
     String text01 = sata1.getValueString();
     Serial.println(text01); 
   }
 
+  // String second example. Last character is always new line (\n). Can be ommitted if input parameter = false
   if (sata1.getKey() == "text02") {
-    String text02 = sata1.getValueString();
+    String text02 = sata1.getValueString(false);
     Serial.println(text02); 
   }
 
+  // State HIGH, LOW
   if (sata1.getKey() == "stat01") {
     int stat01 = sata1.getValueState();
     digitalWrite(LED_BUILTIN, stat01); 
     Serial.println(stat01); 
   }
-
+  // Boolean true, false
   if (sata1.getKey() == "stat02") {
     bool stat02 = sata1.getValueBool();
     Serial.println(stat02); 
   }
-
-  // if (sata1.getKey() == "numb01") {
-  //   int numb01 = sata1.getValueString().toInt(); 
-  //   Serial.println(numb01); 
-  // }  
-
-  // if (sata1.getKey() == "deci01") {  
-  //   double deci01 = sata1.getValueString().toDouble();
-  //   Serial.println(deci01); 
-  // }  
-
+  // Number without decimal places
+  if (sata1.getKey() == "numb01") {
+    int numb01 = sata1.getValueInteger(); 
+    Serial.println(numb01); 
+  }  
+  // Number with decimal places
+  if (sata1.getKey() == "deci01") {  
+    double deci01 = sata1.getValueDouble();
+    Serial.println(deci01); 
+  }  
 
 }

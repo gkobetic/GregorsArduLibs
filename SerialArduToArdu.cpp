@@ -112,11 +112,16 @@ void SerialArduToArdu::sendString(String a, String b) {
   sendSerial(a, b);   
   checkStringSize(a, b);
 }
-//Method for sending Status
-void SerialArduToArdu::sendStatus(String a, int b) {
-  if (b != 1) {
-    b = 0;
+//Method for sending State
+void SerialArduToArdu::sendState(String a, int b) {
+  if (b != 0) {
+    b = 1;
   }
+  sendSerial(a, String(b)); 
+  checkStringSize(a); 
+}
+//Method for sending State
+void SerialArduToArdu::sendBool(String a, bool b) {
   sendSerial(a, String(b)); 
   checkStringSize(a); 
 }
@@ -173,6 +178,7 @@ void SerialArduToArdu::readSerial() {
   _key = myString.substring(0, 6);
   _value = myString.substring(7, myString.length()); 
 }
+
 // Returns KEY text
 String SerialArduToArdu::getKey() {
   #if defined(HAVE_HWSERIAL0)
@@ -198,11 +204,13 @@ String SerialArduToArdu::getValue(bool endCharacter) {
     return _value.substring(0, _value.length() -1);
   }
 }
-// Returns VALUE text in String format
+
+// Methods for different return types
+// Returns VALUE text in String
 String SerialArduToArdu::getValueString(bool endCharacter) {
   return getValue(endCharacter);
 }
-// Returns VALUE text in bool format
+// Returns VALUE text in bool
 bool SerialArduToArdu::getValueBool(bool endCharacter) {
   if (getValue(endCharacter) == 0) {
     return false;
@@ -211,7 +219,7 @@ bool SerialArduToArdu::getValueBool(bool endCharacter) {
     return true;
   }
 }
-// Returns VALUE text in state (HIGH, LOW) format
+// Returns VALUE text in state (HIGH, LOW)
 int SerialArduToArdu::getValueState(bool endCharacter) {
   if (getValue(endCharacter) == 0) {
     return 0;
@@ -220,9 +228,13 @@ int SerialArduToArdu::getValueState(bool endCharacter) {
     return 1;
   }
 }
-// Returns VALUE text in integer format
+// Returns VALUE text in integer
 int SerialArduToArdu::getValueInteger(bool endCharacter) {
   return getValue(endCharacter).toInt();
+}
+// Returns VALUE text in double
+double SerialArduToArdu::getValueDouble(bool endCharacter) {
+  return getValue(endCharacter).toDouble();
 }
 
 

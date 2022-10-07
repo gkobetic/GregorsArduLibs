@@ -37,10 +37,10 @@ void loop() {
     sata1.sendString("text02", "rainbow");
     delay(100);
 
-    sata1.sendStatus("stat01", HIGH);
+    sata1.sendState("stat01", HIGH);
     delay(100);
 
-    sata1.sendStatus("stat02", false);
+    sata1.sendBool("stat02", false);
     delay(100);
 
     sata1.sendInteger("numb01", 12);

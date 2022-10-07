@@ -11,9 +11,14 @@ setInterval	KEYWORD2
 SerialArduToArdu	KEYWORD1
 begin	KEYWORD2
 sendString	KEYWORD2
-sendStatus	KEYWORD2
+sendState	KEYWORD2
+sendBool	KEYWORD2
 sendInteger	KEYWORD2
 sendDecimal	KEYWORD2
 readSerial	KEYWORD2
 getKey	KEYWORD2
-getValue	KEYWORD2
+getValueString	KEYWORD2
+getValueBool	KEYWORD2
+getValueState	KEYWORD2
+getValueInteger	KEYWORD2
+getValueDouble	KEYWORD2

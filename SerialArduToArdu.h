@@ -18,7 +18,8 @@ class SerialArduToArdu
 	// Public methods and variables
 	void begin();
 	void sendString(String a, String b);
-	void sendStatus(String a, int b);
+	void sendState(String a, int b);
+	void sendBool(String a, bool b);
 	void sendInteger(String a, int b);
 	void sendDecimal(String a, double b);
 	void readSerial();
