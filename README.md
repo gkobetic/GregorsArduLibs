@@ -14,7 +14,7 @@ KEY text must be fix size 6 characters and VALUE text is not limited. However be
 - SerialArduToArdu sata1(1, 9600, 0, 9600); -> Serial number and port for send and receive data on the same sketch if needed
 
 #### Here are implemented functions:
-- begin(); -> call in setup to inicialize communication
+- begin(); -> call in setup() to inicialize communication
 ##### For sending data:
 - sendString(); -> self-explanatory 
 - sendState(); -> sends state HIGH, LOW for example use with digitalWrite(LED_BUILTIN, .sendState()); 
