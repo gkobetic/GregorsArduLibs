@@ -23,7 +23,11 @@ class SerialArduToArdu
 	void sendDecimal(String a, double b);
 	void readSerial();
 	String getKey();
-	String getValue(bool endCharacter = true);
+	String getValueString(bool endCharacter = true);
+	bool getValueBool(bool endCharacter = true);
+	int getValueState(bool endCharacter = true);
+	int getValueInteger(bool endCharacter = true);
+	double getValueDouble(bool endCharacter = true);
 	
 	private:
 	// Private methods and variables
@@ -32,6 +36,7 @@ class SerialArduToArdu
 	String _key, _value;
 	void sendSerial(String x, String y);
 	void checkStringSize(String myKey, String myValue = "");
+	String getValue(bool endCharacter);
 	
 };
 

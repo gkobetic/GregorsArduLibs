@@ -39,6 +39,12 @@ void SerialArduToArdu::begin() {
 	    Serial3.begin(_speedSend);
     #endif
   }
+  else {
+    #if defined(HAVE_HWSERIAL0)
+      // Error
+      if (_serialOutput) Serial.println("Serial port number for sending data not declared or does not exists");
+    #endif
+  }
 
   // Receive ports
   if (_serialPortReceive == 0) {
@@ -59,6 +65,12 @@ void SerialArduToArdu::begin() {
   else if (_serialPortReceive == 3) {
     #if defined(HAVE_HWSERIAL3)
 	    Serial3.begin(_speedReceive);
+    #endif
+  }
+  else {
+    #if defined(HAVE_HWSERIAL0)
+      // Error
+      if (_serialOutput) Serial.println("Serial port number for receiving data not declared or does not exists");
     #endif
   }
 }
@@ -169,7 +181,7 @@ String SerialArduToArdu::getKey() {
   #endif
   return _key;
 }
-// Returns VALUE text. Last character is new line (\n). Can be ommitted if endCharacter = false. Default = true
+// Commom method for VALUE text. Last character is new line (\n). Can be ommitted if endCharacter = false
 String SerialArduToArdu::getValue(bool endCharacter) {
   if (endCharacter) {
     #if defined(HAVE_HWSERIAL0)
@@ -186,4 +198,32 @@ String SerialArduToArdu::getValue(bool endCharacter) {
     return _value.substring(0, _value.length() -1);
   }
 }
+// Returns VALUE text in String format
+String SerialArduToArdu::getValueString(bool endCharacter) {
+  return getValue(endCharacter);
+}
+// Returns VALUE text in bool format
+bool SerialArduToArdu::getValueBool(bool endCharacter) {
+  if (getValue(endCharacter) == 0) {
+    return false;
+  }
+  else {
+    return true;
+  }
+}
+// Returns VALUE text in state (HIGH, LOW) format
+int SerialArduToArdu::getValueState(bool endCharacter) {
+  if (getValue(endCharacter) == 0) {
+    return 0;
+  }
+  else {
+    return 1;
+  }
+}
+// Returns VALUE text in integer format
+int SerialArduToArdu::getValueInteger(bool endCharacter) {
+  return getValue(endCharacter).toInt();
+}
+
+
 /*********** METHODS FOR RECEIVING DATA - END ***********/

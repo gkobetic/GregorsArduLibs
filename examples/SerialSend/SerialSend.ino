@@ -15,8 +15,8 @@
 //Create serial Arduino to Arduino object. 
 //Description of input parameters: 
 //SerialArduToArdu sata1(serial port number for send data, baud rate for send data, serial port number for receive data, baud rate for receive data, optional: if true send (verbose) data to Serial(USB) for debuging).
-SerialArduToArdu sata1(1, 9600, null, null); // for send data only
-//SerialArduToArdu sata1(1, 9600, null, null, true);  // last paramether=true for debug mode
+SerialArduToArdu sata1(1, 9600, NULL, NULL); // for send data only
+//SerialArduToArdu sata1(1, 9600, NULL, NULL, true);  // last paramether=true for debug mode
 //SerialArduToArdu sata1(1, 9600, 0, 9600); // for send and receive data on the same sketch if needed
 
 void setup() {
