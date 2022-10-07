@@ -52,7 +52,7 @@ For more details see code example in Arduino IDE.
 
 You can contact me any time:
 - gregor@notics.si
-- Test [LinkedIn](https://www.linkedin.com/in/gregor-kobeti%C4%8D/).
+- [LinkedIn](https://www.linkedin.com/in/gregor-kobeti%C4%8D/)
 - https://www.notics.si/
 
 Best regards!
