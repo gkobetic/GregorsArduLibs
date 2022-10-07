@@ -30,7 +30,9 @@ KEY text must be fix size 6 characters and VALUE text is not limited. However be
 - getValueInteger(); -> get VALUE in number
 - getValueDouble(); -> get VALUE in number with decimals
  
- 
+ For more details see code examples in Arduino IDE.
+
+
 ### 2. Non stopable delay (MyDelay)
 Library for delays (time intervals) that do not stop the main loop from executing.
 
@@ -46,9 +48,9 @@ Add as many delays as you want. Name them like myDelay2(), myDelay3(), myDelay4(
 - reset(); -> resets timer and start counting interval time from the beginning
 - setInterval(200); -> change interval time on existing delay. 200 is new interval time in milliseconds 
 
+For more details see code example in Arduino IDE.
 
-____________________________________________
-Please see code example in Arduino IDE.
+
 
 You can contact me any time:
 - gregor@notics.si
