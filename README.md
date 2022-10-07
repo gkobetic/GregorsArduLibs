@@ -3,6 +3,7 @@
 - Library Non stopable delay. Name: MyDelay
 
 
+
 ### 1. Arduino to Arduino hardware serial communication (SerialArduToArdu)
 Library for Arduino to Arduino or Arduino to ESP8266 (ESP32) serial communication over hardware serial ports.
 Sending and receiving data can be implemented in single sketch on different Serial ports if needed.
@@ -29,6 +30,7 @@ KEY text must be fix size 6 characters and VALUE text is not limited. However be
 - getValueInteger(); -> get VALUE in number
 - getValueDouble(); -> get VALUE in number with decimals
  
+ 
 ### 2. Non stopable delay (MyDelay)
 Library for delays (time intervals) that do not stop the main loop from executing.
 
@@ -44,6 +46,8 @@ Add as many delays as you want. Name them like myDelay2(), myDelay3(), myDelay4(
 - reset(); -> resets timer and start counting interval time from the beginning
 - setInterval(200); -> change interval time on existing delay. 200 is new interval time in milliseconds 
 
+
+____________________________________________
 Please see code example in Arduino IDE.
 
 You can contact me any time:
