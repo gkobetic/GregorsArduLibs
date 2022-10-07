@@ -1,4 +1,4 @@
-## Gregor's Arduino Libraries
+# Gregor's Arduino Libraries
 - Library for Arduino to Arduino hardware serial communication. Name: SerialArduToArdu
 - Library Non stopable delay. Name: MyDelay
 
