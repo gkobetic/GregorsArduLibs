@@ -70,12 +70,17 @@ void SerialArduToArdu::checkStringSize(String myKey, String myValue) {
 /*********** METHODS FOR SENDING DATA - END ***********/
 
 /*********** METHODS FOR RECEIVING DATA - BEGIN ***********/
-//Method for reading serial port. Must be called in loop()
+//Method for reading serial port. Must be called in main loop()
 void SerialArduToArdu::readSerial() {
   String myString = "";
 
   //Reading serial until I get new line character
-  if(_serialPortReceive->available() > 0) myString = _serialPortReceive->readStringUntil('\n'); 
+  if(_serialPortReceive->available() > 0) {
+    myString = _serialPortReceive->readStringUntil('\n'); 
+    
+    // For USB debuging if true
+    if (_serialOutput) Serial.println("Serial received: " + myString);
+  }
 
   //Parse data
   _key = myString.substring(0, 6);
@@ -84,21 +89,14 @@ void SerialArduToArdu::readSerial() {
 
 // Returns KEY text
 String SerialArduToArdu::getKey() {
-  // For USB debuging if true
-  if (_key)
-    if (_serialOutput) Serial.println("Key text received: " + _key);
   return _key;
 }
 // Commom method for VALUE text. Last character is new line (\n). Can be ommitted if endCharacter = false
 String SerialArduToArdu::getValue(bool endCharacter) {
   if (endCharacter) {
-    // For USB debuging if true
-    if (_serialOutput) Serial.println("Value text received: " + _value);
     return _value;
   }
   else {
-    // For USB debuging if true
-    if (_serialOutput) Serial.println("Value text received: " + _value);
     return _value.substring(0, _value.length() -1);
   }
 }

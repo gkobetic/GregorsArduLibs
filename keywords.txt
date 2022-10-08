@@ -9,7 +9,8 @@ setInterval	KEYWORD2
 
 # SerialArduToArdu library
 SerialArduToArdu	KEYWORD1
-begin	KEYWORD2
+setPortSend	KEYWORD2
+setPortReceive	KEYWORD2
 sendString	KEYWORD2
 sendState	KEYWORD2
 sendBool	KEYWORD2
