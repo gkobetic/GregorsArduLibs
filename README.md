@@ -7,16 +7,17 @@
 ### 1. Arduino to Arduino hardware serial communication (SerialArduToArdu)
 Library for Arduino to Arduino or Arduino to ESP8266 (ESP32) serial communication over hardware serial ports.
 Sending and receiving data can be implemented in single sketch on different Serial ports if needed.
-Library includes several methods (with KEY-VALUE pairs) for sending text, number, number with decimals, state like HIGH or LOW, true or false.
+Library includes several methods (with KEY-VALUE pairs) for sending and receiving text, number, number with decimals, state like HIGH or LOW, true or false.
 KEY text must be fix size 6 characters and VALUE text is not limited. However be carefull with String (text) size. Default Serial buffer is 64 bytes and overflow can occur!
 
 #### Create serial communication:
-- SerialArduToArdu sata1(1, 9600, 0, 9600); -> Serial number and port for send and receive data on the same sketch if needed
+- SerialArduToArdu sata1(false); -> paramether=true for debug mode, to print sent/received data on serial monitor
 
 #### Here are implemented functions:
-- begin(); -> call in setup() to inicialize communication
+- setPortSend(&Serial1); -> defines serial port for sending data
+- setPortReceive(&Serial); -> defines serial port for receiving data
 ##### For sending data:
-- sendString(); -> self-explanatory 
+- sendString(); -> sends text
 - sendState(); -> sends state HIGH, LOW for example use with digitalWrite(LED_BUILTIN, .sendState()); 
 - sendBool(); -> sends boolean value true or false
 - sendInteger(); -> sends number
