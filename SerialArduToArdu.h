@@ -22,7 +22,7 @@ class SerialArduToArdu
 	void sendState(String a, int b);
 	void sendBool(String a, bool b);
 	void sendInteger(String a, int b);
-	void sendDecimal(String a, double b);
+	void sendDouble(String a, double b);
 	void readSerial();
 	String getKey();
 	String getValueString(bool endCharacter = true);

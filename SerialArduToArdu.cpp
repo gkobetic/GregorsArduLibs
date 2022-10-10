@@ -38,14 +38,17 @@ void SerialArduToArdu::sendString(String a, String b) {
 }
 //Method for sending State
 void SerialArduToArdu::sendState(String a, int b) {
-  if (b != 0) {
+  // That's how Arduino does it for bool type
+  if (b != 0)
     b = 1;
-  }
   sendSerial(a, String(b)); 
   checkStringSize(a); 
 }
 //Method for sending State
 void SerialArduToArdu::sendBool(String a, bool b) {
+  // That's how Arduino does it for bool type
+  if (b != 0)
+    b = 1;
   sendSerial(a, String(b)); 
   checkStringSize(a); 
 }
@@ -55,7 +58,7 @@ void SerialArduToArdu::sendInteger(String a, int b) {
   checkStringSize(a);
 }
 //Method for sending Decimal
-void SerialArduToArdu::sendDecimal(String a, double b) {
+void SerialArduToArdu::sendDouble(String a, double b) {
   sendSerial(a, String(b));   
   checkStringSize(a);
 }
@@ -82,7 +85,7 @@ void SerialArduToArdu::readSerial() {
     if (_serialOutput) Serial.println("Serial received: " + myString);
   }
 
-  //Parse data
+  //Parse data. KEY must be 6 characters
   _key = myString.substring(0, 6);
   _value = myString.substring(7, myString.length()); 
 }
@@ -108,21 +111,19 @@ String SerialArduToArdu::getValueString(bool endCharacter) {
 }
 // Returns VALUE text in bool
 bool SerialArduToArdu::getValueBool(bool endCharacter) {
-  if (getValue(endCharacter) == 0) {
+  // That's how Arduino does it for bool type
+  if (getValue(endCharacter).toInt() == 0)
     return false;
-  }
-  else {
+  else
     return true;
-  }
 }
 // Returns VALUE text in state (HIGH, LOW)
 int SerialArduToArdu::getValueState(bool endCharacter) {
-  if (getValue(endCharacter) == 0) {
-    return 0;
-  }
-  else {
-    return 1;
-  }
+  // That's how Arduino does it for bool type
+  if (getValue(endCharacter).toInt() == 0)
+    return false;
+  else
+    return true;
 }
 // Returns VALUE text in integer
 int SerialArduToArdu::getValueInteger(bool endCharacter) {

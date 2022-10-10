@@ -21,7 +21,7 @@ KEY text must be fix size 6 characters and VALUE text is not limited. However be
 - sendState(); -> sends state HIGH, LOW for example use with digitalWrite(LED_BUILTIN, .sendState()); 
 - sendBool(); -> sends boolean value true or false
 - sendInteger(); -> sends number
-- sendDecimal(); -> sends number with decimal places
+- sendDouble(); -> sends number with decimal places
 ##### For receiving data:
 - readSerial(); -> reads serial in main loop()
 - getKey(); -> get KEY text, since data are in KEY-VALUE pairs
