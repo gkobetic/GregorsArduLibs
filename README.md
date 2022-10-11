@@ -59,7 +59,7 @@ For more details see code example in Arduino IDE.
 
 #### Connect with me:
 <p align="left">
-<a href="https://linkedin.com/in/gkobetic" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="gkobetic" height="30" width="40" /></a>
+<a href="https://linkedin.com/in/gregor-kobetič" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="gkobetic" height="30" width="40" /></a>
 </p>
 
 #### 💰 You can help me by Donating
