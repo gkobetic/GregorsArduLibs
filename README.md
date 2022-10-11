@@ -1,8 +1,10 @@
 # Gregor's Arduino Libraries
-- Library for Arduino to Arduino hardware serial communication. Name: SerialArduToArdu
-- Library Non stopable delay. Name: MyDelay
 
+### Table of Contents
+   * [Library for Arduino to Arduino (ESP8266) hardware serial communication](#1-arduino-to-arduino-hardware-serial-communication-serialardutoardu)
+   * [Library Non stopable delay](#2-non-stopable-delay-mydelay)
 
+<br />
 
 ### 1. Arduino to Arduino hardware serial communication (SerialArduToArdu)
 Library for Arduino to Arduino or Arduino to ESP8266 (ESP32) serial communication over hardware serial ports.
@@ -51,9 +53,14 @@ Add as many delays as you want. Name them like myDelay2(), myDelay3(), myDelay4(
 
 For more details see code example in Arduino IDE.
 
-You can contact me any time:
+#### My contacts:
 - gregor@notics.si
-- [LinkedIn](https://www.linkedin.com/in/gregor-kobeti%C4%8D/)
 - https://www.notics.si/
 
-Best regards!
+#### Connect with me:
+<p align="left">
+<a href="https://linkedin.com/in/gkobetic" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="gkobetic" height="30" width="40" /></a>
+</p>
+
+#### 💰 You can help me by Donating
+[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/gkobetic@gmail.com) 
