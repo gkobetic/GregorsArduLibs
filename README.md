@@ -35,6 +35,7 @@ KEY text must be fix size 6 characters and VALUE text is not limited. However be
  
  For more details see code examples in Arduino IDE.
 
+<br />
 
 ### 2. Non stopable delay (MyDelay)
 Library for delays (time intervals) that do not stop the main loop from executing.
@@ -62,5 +63,6 @@ For more details see code example in Arduino IDE.
 <a href="https://linkedin.com/in/gregor-kobetič" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="gkobetic" height="30" width="40" /></a>
 </p>
 
-#### 💰 You can help me by Donating
-[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/gkobetic@gmail.com) 
+<!-- #### 💰 You can help me by Donating
+[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/gkobetic) 
+popravi link !!!! -->
