@@ -36,7 +36,6 @@ void loop() {
     String text01 = sata1.getValueString();
     //Serial.println(text01); 
   }
-
   // String second example. Last character is always new line (\n). Can be ommitted if input parameter = false
   if (sata1.getKey() == "text02") {
     String text02 = sata1.getValueString(false);
@@ -49,16 +48,30 @@ void loop() {
     digitalWrite(LED_BUILTIN, stat01); 
     //Serial.println(stat01); 
   }
-  // Boolean true, false
+  // State HIGH, LOW
   if (sata1.getKey() == "stat02") {
-    bool stat02 = sata1.getValueBool();
+    int stat02 = sata1.getValueState();
+    digitalWrite(LED_BUILTIN, stat02); 
     //Serial.println(stat02); 
   }
+
+  // Boolean true, false
+  if (sata1.getKey() == "bool01") {
+    bool bool01 = sata1.getValueBool();
+    //Serial.println(bool01); 
+  }
+  // Boolean true, false
+  if (sata1.getKey() == "bool02") {
+    bool bool02 = sata1.getValueBool();
+    //Serial.println(bool02); 
+  }
+
   // Number without decimal places
   if (sata1.getKey() == "numb01") {
     int numb01 = sata1.getValueInteger(); 
     //Serial.println(numb01); 
   }  
+  
   // Number with decimal places
   if (sata1.getKey() == "deci01") {  
     double deci01 = sata1.getValueDouble();

@@ -121,9 +121,9 @@ bool SerialArduToArdu::getValueBool(bool endCharacter) {
 int SerialArduToArdu::getValueState(bool endCharacter) {
   // That's how Arduino does it for bool type
   if (getValue(endCharacter).toInt() == 0)
-    return false;
+    return 0;
   else
-    return true;
+    return 1;
 }
 // Returns VALUE text in integer
 int SerialArduToArdu::getValueInteger(bool endCharacter) {
