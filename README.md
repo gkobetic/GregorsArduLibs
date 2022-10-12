@@ -1,6 +1,6 @@
 # Gregor's Arduino Libraries
 
-[![Hits](https://hits.sh/github.com/gkobetic/GregorsArduLibs.svg)](https://hits.sh/github.com/gkobetic/GregorsArduLibs/)
+[![Hits](https://hits.sh/github.com/gkobetic/GregorsArduLibs.svg?label=Repository%20views)](https://hits.sh/github.com/gkobetic/GregorsArduLibs/)
 
 ### Table of Contents
    * [Library for Arduino to Arduino (ESP8266) hardware serial communication](#1-arduino-to-arduino-hardware-serial-communication-serialardutoardu)
