@@ -1,5 +1,7 @@
 # Gregor's Arduino Libraries
 
+<a href="https://hits.sh/github.com/silentsoft/hits/"><img alt="Hits" src="https://hits.sh/github.com/gkobetic/hits.svg"/></a>
+
 ### Table of Contents
    * [Library for Arduino to Arduino (ESP8266) hardware serial communication](#1-arduino-to-arduino-hardware-serial-communication-serialardutoardu)
    * [Library Non stopable delay](#2-non-stopable-delay-mydelay)
