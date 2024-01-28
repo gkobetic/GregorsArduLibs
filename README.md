@@ -57,8 +57,7 @@ Add as many delays as you want. Name them like myDelay2(), myDelay3(), myDelay4(
 For more details see code example in Arduino IDE.
 
 #### My contacts:
-- gregor@notics.si
-- https://www.notics.si/
+- gkobetic@gmail.com
 
 #### Connect with me:
 <p align="left">
