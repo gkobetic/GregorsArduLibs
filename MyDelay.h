@@ -17,7 +17,7 @@ class MyDelay
 	MyDelay(unsigned long milliseconds);
 	//Public methods and variables
 	bool isInterval();
-	void start();
+	void start(bool resetTimer = true);
 	void stop();
 	void resume();
 	void reset();
@@ -26,7 +26,7 @@ class MyDelay
 	private:
 	//Private methods and variables
 	unsigned long preMills, curMills, delaytime;
-	bool canExecute;
+	bool canExecute, _resetMillis;
 };
 
 #endif

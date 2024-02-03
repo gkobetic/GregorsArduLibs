@@ -49,7 +49,7 @@ Add as many delays as you want. Name them like myDelay2(), myDelay3(), myDelay4(
 
 #### Here are implemented functions:
 - isInterval(); -> check if interval time has expired and execute your code
-- start(); -> starts executing delay
+- start(); -> starts executing delay. Optional parameter start(bool resetTimer = true), if false interval will not reset automatically. Usefull for countdown timer
 - stop(); -> stop executing delay
 - resume(); -> resumes executing delay
 - reset(); -> resets timer and start counting interval time from the beginning

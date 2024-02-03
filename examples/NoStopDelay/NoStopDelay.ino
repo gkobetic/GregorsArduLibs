@@ -8,12 +8,14 @@
 
 //Create delay object and set interval in milliseconds
 MyDelay myDelay1(1000);
-MyDelay myDelay2(500);
+MyDelay myDelay2(5000);
 
 void setup() {
+  Serial.begin(9600);
+
   //Start method must be called for delay to start executing
   myDelay1.start();
-  myDelay2.start();
+  myDelay2.start(false); //Optional parameter (resetTimer), if false interval will not reset automatically. Usefull for countdown timer
 
   //Stop method can be called to stop executing the delay
   //myDelay1.stop();
@@ -31,12 +33,14 @@ void loop() {
   if(myDelay1.isInterval())
   {
     //Here is my code to be executed
+    Serial.println("Timer1 executed");
   }
 
   //Another delay
   if(myDelay2.isInterval())
   {
     //Here is my code to be executed
+    Serial.println("Timer2 executed");
   }
 
   //Example how to change interval time on existing delay

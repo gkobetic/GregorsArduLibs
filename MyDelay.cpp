@@ -22,7 +22,7 @@ bool MyDelay::isInterval() {
 	curMills = millis();
 	if (preMills > curMills) preMills = 0; //Safety if millis() overflows
 	if (curMills - preMills >= delaytime) {
-		preMills = curMills;
+		if(_resetMillis) preMills = curMills;
         return true;
 	}
 	else {
@@ -30,8 +30,9 @@ bool MyDelay::isInterval() {
 	}		
 }
 
-//Method to start calculating intervals. This method resets preMills
-void MyDelay::start() {
+//Method to start calculating intervals
+void MyDelay::start(bool resetTimer = true) {
+	_resetMillis = resetTimer; //if false then preMills will never reset automatically. Usefull for countdown timer
 	canExecute = true;
 	preMills = millis();
 }
