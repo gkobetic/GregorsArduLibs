@@ -5,7 +5,7 @@
 ### Table of Contents
    * [Library for Arduino to Arduino (ESP8266) hardware serial communication](#1-arduino-to-arduino-hardware-serial-communication-serialardutoardu)
    * [Library Non stopable delay](#2-non-stopable-delay-mydelay)
-   * [Library various functions](#3-variousvfunctions-myFunctions)
+   * [Library various functions](#3-various-functions-myFunctions)
 
 <br />
 
