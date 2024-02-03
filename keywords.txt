@@ -23,3 +23,7 @@ getValueBool	KEYWORD2
 getValueState	KEYWORD2
 getValueInteger	KEYWORD2
 getValueDouble	KEYWORD2
+
+# MyFunctions library
+MyFunctions KEYWORD1
+map	KEYWORD2

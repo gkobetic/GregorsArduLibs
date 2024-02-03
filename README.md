@@ -56,6 +56,20 @@ Add as many delays as you want. Name them like myDelay2(), myDelay3(), myDelay4(
 
 For more details see code example in Arduino IDE.
 
+<br />
+
+### 3. Various functions (MyFunctions)
+I created this function, becouse embeded Arduino map() function returns negative values when mapping higher numbers. 
+Example: Arduino map() function returns some unacurate values in this case: map(x, 1000, 2000, -255, 255).
+
+#### Create myFunctions:
+- Create object, with no arguments
+
+#### Here are implemented functions:
+- map(double value, double fromLow, double fromHigh, double toLow, double toHigh); -> check if interval time has expired and execute your code
+
+For more details see code example in Arduino IDE.
+
 #### My contacts:
 - gkobetic@gmail.com
 
